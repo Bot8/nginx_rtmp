@@ -24,4 +24,4 @@ RUN make install
 
 WORKDIR /usr/local/nginx
 
-CMD /usr/local/nginx/sbin/nginx
+CMD /usr/local/nginx/sbin/nginx -g 'daemon off;'
