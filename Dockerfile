@@ -22,6 +22,14 @@ RUN make
 
 RUN make install
 
+COPY nginx.conf /tmp/nginx.conf 
+
+RUN mkdir /usr/local/nginx/conf/conf.d
+
+RUN rm /usr/local/nginx/conf/nginx.conf
+
+RUN cp /tmp/nginx.conf /usr/local/nginx/conf/
+
 WORKDIR /usr/local/nginx
 
 CMD /usr/local/nginx/sbin/nginx -g 'daemon off;'
